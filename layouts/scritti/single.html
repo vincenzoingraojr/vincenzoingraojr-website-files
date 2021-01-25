@@ -1,0 +1,40 @@
+{{ partial "header.html" . }}
+<div class="essay-title-head">
+    {{.Title}}
+</div>
+<body>
+    <div class="page-container">
+        <div class="essay-image"><img src="{{.Params.image}}"></div>
+        <div class="page-title">{{.Title}}.</div>
+        <div class="page-text">{{.Params.summary}}</div>
+        <div class="essay-date">Online dal: {{ .Date.Day }} {{ index $.Site.Data.mesi (printf "%d" .Date.Month) }} {{ .Date.Year }}</div>
+        <div class="essay-author">Autore: {{.Params.author}}</div>
+        <div class="line"></div>
+        <div class="essay-content">
+            {{.Content}}
+        </div>
+        <div class="line"></div>
+        <div class="pagination">
+            {{if .PrevInSection}}
+                <div class="previous-essay">
+                    <a class="essay-min" href="{{.PrevInSection.Permalink}}" title="{{.PrevInSection.Title}} di {{.PrevInSection.Params.author}}">
+                        <img src="{{.PrevInSection.Params.image}}">
+                        <div class="e-min-title">{{.PrevInSection.Title}}</div>
+                        <div class="e-min-text">&larr; Precedente</div>
+                    </a>
+                </div>
+            {{end}}
+            {{if .NextInSection}}
+                <div class="next-essay">
+                    <a class="essay-min" href="{{.NextInSection.Permalink}}" title="{{.NextInSection.Title}} di {{.NextInSection.Params.author}}">
+                        <img src="{{.NextInSection.Params.image}}">
+                        <div class="e-min-title">{{.NextInSection.Title}}</div>
+                        <div class="e-min-text">Prossimo &rarr;</div>
+                    </a>
+                </div>
+            {{end}}
+        </div>
+        <div class="line"></div>
+        {{ partial "comments.html" . }}
+    </div>
+</body>

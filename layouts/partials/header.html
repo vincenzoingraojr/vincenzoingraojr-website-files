@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it-it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>{{ if .IsHome }} {{ .Title }} | {{ .Site.Params.tagline }} {{ else }} {{ .Title }} | {{.Site.Title}} {{ end }}</title>
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/main.css" type='text/css' media="all"/>
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/secondary.css" type='text/css' media="all"/>
+    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/lightbox.css" type='text/css' media="all"/>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/lunr.js"></script>
+    <script src="/js/lightbox.js"></script>
+    {{ partial "firebase.html" . }}
+    <script src="/js/main.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/immagini/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/immagini/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/immagini/favicon-16x16.png">
+    <link rel="manifest" href="/immagini/site.webmanifest">
+    <link rel="mask-icon" href="/immagini/safari-pinned-tab.svg" color="#b8b8b8">
+    <link rel="shortcut icon" href="/immagini/favicon.ico">
+    <meta name="msapplication-TileColor" content="#b8b8b8">
+    <meta name="msapplication-config" content="/immagini/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    {{ partial "seo.html" . }}
+    <link rel="prefetch" href="{{.Site.BaseURL}}">
+    <link rel="prefetch" href="{{.Site.BaseURL}}/scritti/">
+    <link rel="prefetch" href="{{.Site.BaseURL}}/libri">
+    <link rel="prefetch" href="{{.Site.BaseURL}}/info-contatti">
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6b3f7316-cc1c-482a-8a82-3874fd59fcd1" type="text/javascript" async></script>
+</head>
+{{ with .Site.Params.construction }}
+<div class="site-warning">
+    <div class="page-text white">
+        Il sito è in costruzione. Ci vorrà una settimana o due per sistemarlo. A dopo!
+    </div>
+</div>
+{{ end }}
+<header>
+    <div class="site-title">
+        <a href="{{.Site.BaseURL}}" title="Homepage del sito di Vincenzo Ingrao Jr.">vincenzoingraojr.com</a><span></span>
+    </div>
+    <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="/scritti/" class="{{if or (.Params.scritti)}}active{{end}}" title="Un elenco di tutti i miei scritti e progetti."><span>/</span>Scritti</a></li>
+            <li><a href="/libri" class="{{if or (.Params.libri)}}active{{end}}" title="Una copia online della mia libreria fisica."><span>/</span>Libri</a></li>
+            <li><a href="/info-contatti" class="{{if or (.Params.info_contatti)}}active{{end}}" title="Informazioni e contatti di Vincenzo Ingrao Jr."><span>/</span>Info e contatti</a></li>
+        </ul>
+    </div>
+    <div class="auth">
+        <a href="/account" class="{{if or (.Params.account)}}active{{end}}" title="Gestione dell'account.">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c2.757 0 5 2.243 5 5.001 0 2.756-2.243 5-5 5s-5-2.244-5-5c0-2.758 2.243-5.001 5-5.001zm0-2c-3.866 0-7 3.134-7 7.001 0 3.865 3.134 7 7 7s7-3.135 7-7c0-3.867-3.134-7.001-7-7.001zm6.369 13.353c-.497.498-1.057.931-1.658 1.302 2.872 1.874 4.378 5.083 4.972 7.346h-19.387c.572-2.29 2.058-5.503 4.973-7.358-.603-.374-1.162-.811-1.658-1.312-4.258 3.072-5.611 8.506-5.611 10.669h24c0-2.142-1.44-7.557-5.631-10.647z"/></svg>
+        </a>
+    </div>
+</header>

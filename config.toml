@@ -1,0 +1,27 @@
+baseURL = "https://vincenzoingraojr.com"
+languageCode = "it-it"
+title = "Vincenzo Ingrao Jr."
+disableKinds = ["taxonomy", "taxonomyTerm"]
+enableRobotsTXT = true
+canonifyURLs = true
+disableAliases = true
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+    unsafe = true
+
+[sitemap]
+    changefreq = "weekly"
+    filename = "sitemap.xml"
+    priority = 0.5
+
+[params]
+    author = "Vincenzo Ingrao Jr."
+    tagline = "Il sito ufficiale"
+    twitter = "@vincenzoingraoj"
+    construction = ""
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+    page = ["HTML", "RSS"]

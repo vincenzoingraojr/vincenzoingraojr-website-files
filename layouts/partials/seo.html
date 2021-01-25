@@ -1,0 +1,21 @@
+<meta name="description" content="{{if or (.Params.scritti)}}{{.Params.summary}}{{else}}{{.Params.description}}{{end}}">
+<link rel="canonical" href="{{.Permalink}}"/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="{{if or (.Params.scritti)}}{{.Params.summary}}{{else}}{{.Params.description}}{{end}}">
+<meta name="twitter:title" content="{{ if .IsHome }} {{ .Title }} {{ else }} {{ .Title }} | {{.Site.Title}} {{ end }}">
+<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
+<meta name="twitter:creator" content="{{ .Site.Params.twitter }}">
+<meta property="twitter:image" content="https://vincenzoingraojr.com/immagini/android-chrome-512x512.png">
+<script type="application/ld+json">
+    {    "@context": "https://schema.org", 
+          "@type": "WebSite", 
+          "url": "{{ .Permalink }}", 
+          "name": "{{ .Site.Title }}",
+           "author": {
+              "@type": "Person",
+              "name": "{{ .Site.Params.author }}"
+            },
+          "description": "{{ .Site.Params.description }}",
+          "image": "https://vincenzoingraojr.com/immagini/android-chrome-512x512.png"
+    }
+</script>

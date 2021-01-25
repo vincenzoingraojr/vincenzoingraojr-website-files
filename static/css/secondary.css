@@ -1,0 +1,550 @@
+.hexa {
+    border: 0px;
+    float: left;
+    text-align: center;
+    height: 35px;
+    width: 60px;
+    font-size: 22px;
+    background: #f0f0f0;
+    color: #3c3c3c;
+    position: relative;
+    margin-top: 15px;
+}
+.hexa:before {
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-bottom: 15px solid #f0f0f0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    top: -15px;
+}
+.hexa:after {
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 15px solid #f0f0f0;
+    bottom: -15px;
+}
+.timeline {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    background: black;
+    z-index: 5;
+}
+.timeline li {
+    padding: 2em 0;
+    margin: 0;
+}
+ul.timeline>li:before {
+    display: none;
+}
+.timeline .hexa {
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    background: #FACC2E;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right:auto;
+    top: -30px;
+    margin-top: 0;
+}
+.timeline .hexa:before {
+    border-bottom: 4px solid #FACC2E;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    top: -4px;
+}
+.timeline .hexa:after {
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top: 4px solid #FACC2E;
+    bottom: -4px;
+}  
+.direction-l, .direction-r {
+    float: none;
+    width: 100%;
+    text-align: center;
+}
+.flag-wrapper {
+    text-align: center;
+    position: relative;
+}
+.flag {
+    position: relative;
+    display: inline;
+    background: rgb(255,255,255);
+    font-weight: 600;
+    z-index: 15;
+    padding: 6px 10px;
+    text-align: left;
+    border-radius: 5px;
+}
+.direction-l .flag:after, .direction-r .flag:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border: solid transparent;
+    border-bottom-color: rgb(255,255,255);
+    border-width: 8px;
+    pointer-events: none;
+}
+.direction-l .flag {
+    -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+.direction-r .flag {
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+}
+.time-wrapper {
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+    line-height: 1em;
+    vertical-align: middle;
+    color: #fff;
+}
+.direction-l .time-wrapper {
+    float: none;
+}
+.direction-r .time-wrapper {
+    float: none;
+}
+.time {
+    background: #FACC2E;
+    display: inline-block;
+    padding: 8px;
+}
+.description {
+    position: relative;
+    margin: 1em 0 0 0;
+    padding: 1em;
+    background: #B8B8B8;
+    border-radius: 6px;
+    z-index: 15;
+}
+.direction-l .description, .direction-r .description {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    padding: 1em;
+    z-index: 15;
+}
+@media(min-width: 850px){
+    .timeline {
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .timeline li:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    .timeline .hexa {
+      left: -28px;
+      right: auto;
+      top: 8px;
+    }
+    .timeline .direction-l .hexa {
+      left: auto;
+      right: -28px;
+    }
+    .direction-l {
+      position: relative;
+      width: 310px;
+      float: left;
+      text-align: right;
+    }
+    .direction-r {
+      position: relative;
+      width: 310px;
+      float: right;
+      text-align: left;
+    }
+    .flag-wrapper {
+      display: inline-block;
+    }
+    .flag {
+      font-size: 18px;
+    }
+    .direction-l .flag:after {
+      left: auto;
+      right: -16px;
+      top: 50%;
+      margin-top: -8px;
+      border: solid transparent;
+      border-left-color: rgb(254,254,254);
+      border-width: 8px;
+    }
+    .direction-r .flag:after {
+      top: 50%;
+      margin-top: -8px;
+      border: solid transparent;
+      border-right-color: rgb(254,254,254);
+      border-width: 8px;
+      left: -8px;
+    }
+    .time-wrapper {
+      display: inline;
+      vertical-align: middle;
+      margin: 0;
+    }
+    .direction-l .time-wrapper {
+      float: left;
+    }
+    .direction-r .time-wrapper {
+      float: right;
+    }
+    .time {
+      padding: 5px 10px;
+    }
+}
+@media(min-width: 1410px){
+    .timeline {
+      width: 800px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }  
+    .direction-l {
+      position: relative;
+      width: 380px;
+      float: left;
+      text-align: right;
+    }
+    .direction-r {
+      position: relative;
+      width: 380px;
+      float: right;
+      text-align: left;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Jura;
+    font-weight: 700;
+    color: black;
+}
+a {
+    font-family: RobotoMono;
+    font-weight: 700;
+    text-decoration: underline;
+    color: black;
+}
+a:hover, a:active {
+    color: #FACC2E;
+}
+form.contatti {
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+form.contatti label {
+    font-size: 14px;
+    font-weight: 700;
+}
+form.contatti input[type="text"], form.contatti input[type="email"], form.contatti textarea {
+    font-family: Jura;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #B8B8B8;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+form.contatti textarea {
+    resize: none;
+}
+form.contatti input[type="submit"] {
+    font-family: Jura;
+    background-color: #FACC2E;
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+form.contatti input[type="text"]:focus, form.contatti input[type="email"]:focus, form.contatti textarea:focus {
+    border-color: #FACC2E;
+}
+div.site-warning {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    background-color: #FACC2E;
+    overflow: auto;
+    padding: 20px 20px 20px 20px;
+    z-index: 9999;
+}
+div.page-text.white {
+    font-size: 22px;
+    font-weight: 700;
+    display: inline-block;
+    color: #fff;
+}
+u {
+    text-decoration: underline;
+    text-decoration-color: #FACC2E;
+}
+code {
+    background-color: #3c3c3c;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
+}
+pre {
+    display: block;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid black;
+    background-color: #B8B8B8;
+    overflow: auto;
+    height: auto;
+    max-height: 220px;
+    box-sizing: border-box;
+}
+pre code {
+    border-radius: none;
+    background-color: transparent;
+}
+div.disclaimer {
+    display: block;
+    padding: 20px 20px 20px 40px;
+    background-color: #FACC2E;
+    border-radius: 6px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+div.disclaimer span {
+    display: inline;
+    position: absolute;
+    padding: 5px 5px 5px 5px;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    background-color: #B8B8B8;
+    margin-left: -50px;
+    margin-top: -30px;
+    border-radius: 4px;
+}
+div.equation {
+    display: block;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ol li {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+ol>li:before {
+    content: counters(section, ".");
+    font-family: Jura;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FACC2E;
+    margin-right: 5px;
+}
+ol>li {
+    counter-increment: section 1;
+}
+span.jura-yellow {
+    font-family: Jura;
+    font-weight: 700;
+    color: #FACC2E;
+}
+div.blockquote {
+    margin-left: 40px;
+    padding-left: 20px;
+    border-left: 2px solid black;
+    font-style: italic;
+}
+div.blockquote span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: normal;
+}
+div.page-text.yellow-bold {
+    font-weight: 700;
+    color: #FACC2E;
+}
+div.b-grid.margin-bottom, div.e-grid.margin-bottom {
+    margin-bottom: 20px;
+}
+div.auth {
+    display: block;
+    background-color: #B8B8B8;
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    z-index: 100;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 44px;
+    width: 44px;
+    margin: 0;
+}
+div.auth a {
+    fill: black;
+    text-decoration: none;
+}
+div.auth a.active {
+    fill: #FACC2E;
+}
+@media (max-width: 850px) {
+    div.auth {
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+        display: block;
+        float: right;
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+        margin-right: 15px;
+    }
+}
+div.authentication {
+    box-sizing: border-box;
+}
+div.authentication label {
+    font-size: 14px;
+    font-weight: 700;
+}
+div.authentication input[type="text"], div.authentication input[type="email"], div.authentication input[type="password"] {
+    font-family: Jura;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #B8B8B8;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+div.authentication button[type="submit"] {
+    font-family: Jura;
+    background-color: #FACC2E;
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+div.authentication input[type="text"]:focus, div.authentication input[type="email"]:focus, div.authentication input[type="password"]:focus, div.authentication textarea:focus {
+    border-color: #FACC2E;
+}
+div.logout-button button[type="submit"] {
+    font-family: Jura;
+    background-color: red;
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+div#signup, div#login, div#logout, div#user-profile {
+    display: none;
+}
+div#page-title, div#user-name, div#page-text, div#user-page-description {
+    display: none;
+}
+div.error {
+    display: none;
+    color: #fff;
+    background-color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+div.user-guide {
+    font-family: Jura;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+div.display-email {
+    margin-bottom: 20px;
+}
+div.user-profile ul li button {
+    font-family: RobotoMono;
+    font-weight: 700;
+    background: none;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+div.user-profile ul li:last-child {
+    margin-bottom: 0;
+}
+div.page-text.no-margin-bottom {
+    margin-bottom: 0;
+}
+.margin-top {
+    margin-top: 20px;
+}

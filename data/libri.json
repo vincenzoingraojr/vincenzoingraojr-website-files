@@ -1,0 +1,51 @@
+{
+    "1": {
+        "image": "/immagini/libri/dal-big-bang-ai-buchi-neri-stephen-hawking.png",
+        "title": "Dal big bang ai buchi neri",
+        "author": "Stephen W. Hawking",
+        "link": "https://bur.rizzolilibri.it/libri/dal-big-bang-ai-buchi-neri-deluxe/",
+        "summary": "Un classico. Uno dei migliori libri di divulgazione scientifica."
+    },
+    "2": {
+        "image": "/immagini/libri/universo-elegante-brian-greene.png",
+        "title": "L'universo elegante",
+        "author": "Brian Greene",
+        "link": "https://www.einaudi.it/catalogo-libri/scienze/fisica-e-astronomia/luniverso-elegante-brian-greene-9788806225797/",
+        "summary": "Uno dei più grandi studiosi della teoria delle stringhe ci racconta quest'ultima in maniera avvincente e romanzata."
+    },
+    "3": {
+        "image": "/immagini/libri/business-adventures-john-brooks.png",
+        "title": "Business Adventures",
+        "author": "John Brooks",
+        "link": "https://www.einaudi.it/catalogo-libri/senza-materia/business-adventures-john-brooks-9788806225896/",
+        "summary": "Il libro dei miliardari. Questo libro è pieno di dati, ed è un'analisi approfondita di 8 avventure economiche che ancora hanno tanto da insegnarci."
+    },
+    "4": {
+        "image": "/immagini/libri/verso-la-fine-del-tempo-john-updike.png",
+        "title": "Verso la fine del tempo",
+        "author": "John Updike",
+        "link": "https://www.anobii.com/books/Verso_la_fine_del_tempo/9788882460785/013d10ea8b36b797b0#",
+        "summary": "Un libro da leggere. Tramite la sua scrittura, vi trascinera nel mondo da lui creato ambientato proprio nel 2020."
+    },
+    "5": {
+        "image": "/immagini/libri/gente-di-dublino-james-joyce.png",
+        "title": "Gente di Dublino",
+        "author": "James Joyce",
+        "link": "https://www.mondadoristore.it/Gente-di-Dublino-James-Joyce/eai978880468621/",
+        "summary": "15 racconti brevi che rappresentano un pezzo della storia morale dell'Irlanda."
+    },
+    "6": {
+        "image": "/immagini/libri/einstein.png",
+        "title": "Einstein. Dalla relatività alle onde gravitazionali",
+        "author": "Leonardo Gariboldi per il Corriere della Sera",
+        "link": "https://store.corriere.it/Einstein/3smsEWcVcA8AAAFvjzBwhqOS/pc?CatalogCategoryID=i.ysEWcWhOEAAAFX9PoGweIk&refresh_ce-cp",
+        "summary": "Un libro strabiliante, che racconta in maniera esatta la vita di Einstein e le sue più grandi scoperte."
+    },
+    "7": {
+        "image": "/immagini/libri/il-grande-business-mondiale-energia.png",
+        "title": "Il grande business mondiale dell'energia",
+        "author": "RBA (idee chiave di David Ricardo, Jevons e Solow)",
+        "link": "/link-libro-non-trovato",
+        "summary": "Questo libro spiega in maniera abbastanza semplice le dinamiche del business dell'energia, la nascita di quest'ultimo e la rivoluzione delle energie rinnovabili."
+    }
+}

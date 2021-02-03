@@ -299,7 +299,7 @@ div.home-content-element-2 {
     box-sizing: border-box;
     bottom: 100px;
 }
-div.home-content div.home-content-element-1 img {
+div.home-content-element-1 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -324,7 +324,7 @@ div.home-content-element-2 div.home-box a {
     display: block;
     text-decoration: none;
 }
-div.home-content div.home-content-element-2 div.home-box a div.title {
+div.home-content-element-2 div.home-box a div.title {
     font-family: Jura;
     font-weight: 700;
     color: black;
@@ -741,7 +741,7 @@ div.results a.result div.result-summary {
         fill: #fff;
         margin-top: 15px;
     }
-    div.home-content div.home-content-element-2 div.home-box a div.title {
+    div.home-content-element-2 div.home-box a div.title {
         font-size: 35px;
     }
     div.menu-button {
@@ -907,7 +907,7 @@ div.results a.result div.result-summary {
         fill: #fff;
         margin-top: 15px;
     }
-    div.home-content div.home-content-element-2 div.home-box a div.title {
+    div.home-content-element-2 div.home-box a div.title {
         font-size: 35px;
     }
     div.menu-button {
@@ -1018,7 +1018,7 @@ div.results a.result div.result-summary {
     div.home-container, div.home-content, div.home-content-element-1, div.home-content-element-2 {
         top: 116px;
     }
-    div.home-content div.home-content-element-2 div.home-box a div.title {
+    div.home-content-element-2 div.home-box a div.title {
         font-size: 40px;
     }
     div.b-grid {

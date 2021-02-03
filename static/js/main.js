@@ -48,6 +48,11 @@ $(document).ready(function(){
     home.onmousewheel = function(e) {
         handleMouseWheelDirection(detectMouseWheelDirection(e));
     };
+    if (window.addEventListener) {
+        home.addEventListener('DOMMouseScroll', function(e) {
+            handleMouseWheelDirection(detectMouseWheelDirection(e));
+        });
+    }
     $("#next").click(function(){
         showDivs(slideIndex += 1);
     });

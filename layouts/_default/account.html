@@ -25,13 +25,32 @@
             <button id="access" type="submit">Accedi!</button>
         </div>
         <div id="error" class="error"></div>
+        <button id="reset-password-email" class="reset-password-button">Non ricordi la password del tuo account?</button>
+        <div class="reset-password-form">
+            <h3>Reimposta la password.</h3>
+            <div class="page-text">Dopo aver inserito l'indirizzo email che hai usato per registrarti, riceverai un'email contenente il link per reimpostare la password. Clicca di nuovo il pulsante precedente per nascondere il form seguente.</div>
+            <input type="email" name="email" id="email-r-p" placeholder="Inserisci l'email." required />
+            <button id="send-password-reset" type="submit">Invia richiesta</button>
+        </div>
+        <div class="error" id="error-email">Inserisci un'email valida. Clicca qui per chiudere</div>
+        <div class="success" id="success-1">Controlla l'email che ti è appena stata inviata. Clicca qui per chiudere.</div>
         <div id="user-profile" class="user-profile">
             <div id="display-email" class="display-email"></div>
+            <div class="page-text">
+                Ora che sei registrato al sito, puoi commentare il vari lavori che pubblico.
+            </div>
+            <div class="user-guide">I tuoi commenti.</div>
+            <div class="user-comments" id="account-comments">
+                <ul id="user-comments">
+                </ul>
+            </div>
+            <div class="page-text" id="no-comments">Ancora non hai commentato.</div>
             <div class="user-guide">Cosa puoi fare.</div>
             <ul>
                 <li><button id="delete">Cancellare l'utenza</button>. (Sarebbe opportuno rifare il login prima di procedere con l'eliminazione, per questioni di sicurezza).</li>
-                <li><button id="reset-password">Reimpostare password</button>. (Ti dovrebbe arrivare una mail all'indirizzo che hai usato in fase di registrazione).</li>
+                <li><button id="reset-password">Reimpostare la password</button>. (Ti dovrebbe arrivare una mail all'indirizzo che hai usato in fase di registrazione).</li>
             </ul>
+            <div class="success" id="success-2">Controlla l'email che ti è appena stata inviata. Clicca qui per chiudere.</div>
             <div class="page-text no-margin-bottom margin-top">
                 Questo sistema di autenticazione è stato costruito da me per capire come funzionano davvero questo tipo di cose, ma potrebbe anche essere considerato un modo per avvicinare noi utenti attraverso un mezzo - ovvero questo sito.
             </div>

@@ -18,6 +18,36 @@ $(document).ready(function(){
         x[slideIndex-1].classList.add("current");
         document.getElementById("count").innerHTML = "<div class=\"count-item\">" + slideIndex + "</div>" + "/" + x.length;
     }
+    function detectMouseWheelDirection(e){
+        var delta = null;
+        var direction = false;
+        if(!e) { // if the event is not provided, we get it from the window object
+            e = window.event;
+        }
+        if(e.wheelDelta) { // will work in most cases
+            delta = e.wheelDelta / 60;
+        } 
+        else if(e.detail) { // fallback for Firefox
+            delta = -e.detail / 2;
+        }
+        if(delta !== null) {
+            direction = delta > 0 ? 'up' : 'down';
+        }
+        return direction;
+    }
+    function handleMouseWheelDirection(direction){
+        console.log( direction ); // see the direction in the console
+        if(direction == 'down') {
+            showDivs(slideIndex += 1);
+        } 
+        else if(direction == 'up') {
+            showDivs(slideIndex += -1);
+        }
+    }
+    var home = document.getElementById("home-container");
+    home.onmousewheel = function(e) {
+        handleMouseWheelDirection(detectMouseWheelDirection(e));
+    };
     $("#next").click(function(){
         showDivs(slideIndex += 1);
     });
@@ -26,7 +56,7 @@ $(document).ready(function(){
     });
 });
 $(window).scroll(function(){
-    if ($(this).scrollTop() > 800) {
+    if($(this).scrollTop() > 800) {
         $("div.essay-title-head").addClass("display");
     }
     else {
@@ -39,7 +69,7 @@ function getQueryVariable(variable) {
     var vars = query.split('&'); 
     for(var i = 0; i < vars.length; i++) {
         var pair = vars[i].split('=');
-        if (pair[0] === variable) {
+        if(pair[0] === variable) {
             return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
         }
     }
@@ -124,6 +154,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById("user-name").innerHTML = "Salve " + name + ".";
         document.getElementById("user-page-description").innerHTML = "Questa è la pagina dedicata alla tua utenza.";
         document.getElementById("error").style.display = "none";
+        document.getElementById("reset-password-email").style.display = "none";
+        document.getElementById("success-1").style.display = "none";
+        $("div.reset-password-form").removeClass("not-hidden");
+        document.getElementById("error-email").style.display = "none";
     }
     else {
         document.getElementById("signup").style.display = "block";
@@ -135,6 +169,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById("user-name").style.display = "none";
         document.getElementById("user-page-description").style.display = "none";
         document.getElementById("error").style.display = "none";
+        document.getElementById("reset-password-email").style.display = "block";
+        document.getElementById("success-2").style.display = "none";
     }
 });
 function signup() {
@@ -164,7 +200,12 @@ function login() {
     var errorMessage = null;
     var l_email = document.getElementById("l-email").value;
     var l_password = document.getElementById("l-password").value;
-    firebase.auth().signInWithEmailAndPassword(l_email, l_password).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(l_email, l_password)
+    .then((userCredential) => {
+        showUserComments();
+        location.reload();
+    })
+    .catch(function(error) {
         document.getElementById("error").style.display = "block";
         var errorCode = error.code;
         errorMessage = error.message;
@@ -181,6 +222,18 @@ function resetPassword() {
     var user = firebase.auth().currentUser;
     var emailAddress = user.email;
     auth.sendPasswordResetEmail(emailAddress);
+    document.getElementById("success-2").style.display = "block";
+}
+function resetPasswordwithEmail() {
+    var auth = firebase.auth();
+    var emailAddress = document.getElementById("email-r-p").value;
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+        document.getElementById("success-1").style.display = "block";
+        document.getElementById("error-email").style.display = "none";
+    }).catch(function(error) {
+        document.getElementById("error-email").style.display = "block";
+        document.getElementById("success-1").style.display = "none";
+    });
 }
 function logout() {
     firebase.auth().signOut();
@@ -199,10 +252,26 @@ $(document).ready(function() {
     $("#error").click(function(){
         $("#error").fadeOut();
     });
+    $("#success-1").click(function(){
+        $("#success-1").fadeOut();
+    });
+    $("#success-2").click(function(){
+        $("#success-2").fadeOut();
+    });
+    $("#error-email").click(function(){
+        $("#error-email").fadeOut();
+    });
     $("#delete").click(function(){
         deleteUser();
     });
     $("#reset-password").click(function(){
         resetPassword();
+    });
+    $("#reset-password-email").click(function(){
+        $("div.reset-password-form").toggleClass("not-hidden");
+        $("#success-1").fadeOut();
+    });
+    $("#send-password-reset").click(function(){
+        resetPasswordwithEmail();
     });
 });

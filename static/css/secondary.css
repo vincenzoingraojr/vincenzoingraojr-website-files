@@ -453,6 +453,7 @@ div.auth a.active {
         width: 24px;
         height: 24px;
         box-sizing: border-box;
+        margin-top: 0.5px;
         margin-right: 15px;
     }
 }
@@ -463,7 +464,7 @@ div.authentication label {
     font-size: 14px;
     font-weight: 700;
 }
-div.authentication input[type="text"], div.authentication input[type="email"], div.authentication input[type="password"] {
+div.authentication input[type="text"], div.authentication input[type="email"], div.authentication input[type="password"], div.reset-password-form input[type="email"] {
     font-family: Jura;
     font-weight: 400;
     font-size: 18px;
@@ -479,7 +480,10 @@ div.authentication input[type="text"], div.authentication input[type="email"], d
     margin-top: 5px;
     margin-bottom: 15px;
 }
-div.authentication button[type="submit"] {
+div.reset-password-form input[type="email"] {
+    margin-top: 0;
+}
+div.authentication button[type="submit"], div.reset-password-form button {
     font-family: Jura;
     background-color: #FACC2E;
     border: none;
@@ -490,7 +494,7 @@ div.authentication button[type="submit"] {
     cursor: pointer;
     border-radius: 4px;
 }
-div.authentication input[type="text"]:focus, div.authentication input[type="email"]:focus, div.authentication input[type="password"]:focus, div.authentication textarea:focus {
+div.authentication input[type="text"]:focus, div.authentication input[type="email"]:focus, div.authentication input[type="password"]:focus, div.authentication textarea:focus, div.reset-password-form input[type="email"]:focus {
     border-color: #FACC2E;
 }
 div.logout-button button[type="submit"] {
@@ -511,14 +515,19 @@ div#signup, div#login, div#logout, div#user-profile {
 div#page-title, div#user-name, div#page-text, div#user-page-description {
     display: none;
 }
-div.error {
+div.error, div.success {
     display: none;
     color: #fff;
-    background-color: red;
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 15px;
     border-radius: 2px;
+}
+div.error {
+    background-color: red;
+}
+div.success {
+    background-color: green;
 }
 div.user-guide {
     font-family: Jura;
@@ -547,4 +556,128 @@ div.page-text.no-margin-bottom {
 }
 .margin-top {
     margin-top: 20px;
+}
+div#all-comments, div#comments-warning {
+    display: none;
+}
+div.new-comment label {
+    font-size: 14px;
+    font-weight: 700;
+}
+div.new-comment textarea {
+    font-family: Jura;
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #B8B8B8;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: none;
+}
+div.new-comment textarea:focus {
+    border-color: #FACC2E;
+}
+div.new-comment button[type="submit"] {
+    font-family: Jura;
+    background-color: #FACC2E;
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+div.user-name {
+    font-family: RobotoMono;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+div.user-email {
+    font-family: RobotoMono;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+ul.comments, div.user-comments ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid #FACC2E;
+    padding-left: 20px;
+}
+ul.comments {
+    margin-top: 20px;
+}
+ul.comments li, div.user-comments ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-bottom: 15px;
+}
+ul.comments>li:before, div.user-comments ul>li:before {
+    display: none;
+}
+ul.comments li span.who-comments {
+    display: inline-block;
+    font-family: RobotoMono;
+    font-weight: 700;
+    font-size: 18px;
+    color: black;
+    margin-right: 10px;
+}
+div.user-comments ul li a {
+    margin-right: 10px;
+}
+ul.comments li span.comment-date, div.user-comments ul li span.comment-date {
+    display: inline-block;
+    font-family: Jura;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FACC2E;
+}
+ul.comments li div.comment-text, div.user-comments ul li div.comment-text {
+    margin-top: 5px;
+}
+ul.comments li:last-child, div.user-comments ul li:last-child {
+    margin-bottom: 0;
+}
+div.user-comments {
+    margin-bottom: 20px;
+}
+div#account-comments, div#no-comments {
+    display: none;
+}
+div.title-work {
+    display: none;
+}
+button.reset-password-button {
+    font-family: RobotoMono;
+    background-color: #B8B8B8;
+    border: none;
+    font-weight: 700;
+    color: black;
+    font-size: 18px;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+button#reset-password-email {
+    display: none;
+}
+div.reset-password-form {
+    margin-top: 20px;
+    display: none;
+}
+div.reset-password-form.not-hidden {
+    display: block;
 }

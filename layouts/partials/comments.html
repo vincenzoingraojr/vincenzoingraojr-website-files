@@ -1,25 +1,19 @@
-<button class="comments" id="show-comments" onclick="disqus();return false;">Commenti</button>
-<div id="disqus_thread"></div>
-<script>
-var disqus_loaded = false;
-var disqus_shortname = 'vincenzoingraojr'; 
-function disqus() {
-    if (!disqus_loaded)  {
-        disqus_loaded = true;
-        var e = document.createElement("script");
-        e.type = "text/javascript";
-        e.async = true;
-        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
-        (document.getElementsByTagName("head")[0] ||
-        document.getElementsByTagName("body")[0])
-        .appendChild(e);
-        document.getElementById("show-comments").style.display = "none";
-    }
-}
-var hash = window.location.hash.substr(1);
-if (hash.length > 8) {
-    if (hash.substring(0, 8) == "comment-") {
-    disqus();
-    }
-}
-</script>
+<div class="page-text no-margin-bottom" id="comments-warning">
+    Per commentare devi iscriverti al sito web. Puoi farlo <a href="/account" title="Iscriviti o accedi al sito web">qui</a>.
+</div>
+<div id="all-comments">
+    <h3>Commenti.</h3>
+    <div class="disclaimer">
+        <span>!</span>
+        Cerchiamo di essere gentili ed educati. Facciamo in modo che Internet sia un posto pulito. Ognuno è libero di esprimere la propria opinione, ma ricordiamo: la propria libertà non deve recar danno a quella degli altri.
+    </div>
+    <div class="new-comment" id="new-comment">
+        <div class="user-name" id="user-name-comment"></div>
+        <div class="user-email" id="user-email-comment"></div>
+        <label for="comment">Inserisci il tuo commento</label>
+        <textarea id="comment" name="comment" rows="3"></textarea>
+        <button type="submit" id="submit-comment">Pubblica commento</button>
+    </div>
+    <ul class="comments" id="comments">
+    </ul>
+</div>

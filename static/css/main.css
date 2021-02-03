@@ -273,10 +273,8 @@ div.home-content {
     box-sizing: border-box;
     opacity: 0;
     z-index: 1;
-    display: none;
 }
 div.home-content.current {
-    display: block;
     opacity: 1;
     z-index: 1000;
 }
@@ -301,22 +299,17 @@ div.home-content-element-2 {
     box-sizing: border-box;
     bottom: 100px;
 }
-@keyframes fade_up {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-}
-div.home-content-element-1 img {
+div.home-content div.home-content-element-1 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     box-sizing: border-box;
-    animation: fade_up 1s;
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+}
+div.home-content.current div.home-content-element-1 img {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 div.home-content-element-2 div.home-box {
     display: block;
@@ -331,24 +324,19 @@ div.home-content-element-2 div.home-box a {
     display: block;
     text-decoration: none;
 }
-@keyframes fade_left {
-    from {
-      opacity: 0;
-      transform: translate3d(-100%, 0, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-}
-div.home-content-element-2 div.home-box a div.title {
+div.home-content div.home-content-element-2 div.home-box a div.title {
     font-family: Jura;
     font-weight: 700;
     color: black;
     font-size: 60px;
     text-decoration: none;
     text-decoration-color: #FACC2E;
-    animation: fade_left 1s;
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+div.home-content.current div.home-content-element-2 div.home-box a div.title {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 div.home-content-element-2 div.home-box a:hover div.title, div.home-content-element-2 div.home-box a:active div.title {
     text-decoration: underline;
@@ -753,7 +741,7 @@ div.results a.result div.result-summary {
         fill: #fff;
         margin-top: 15px;
     }
-    div.home-content-element-2 div.home-box a div.title {
+    div.home-content div.home-content-element-2 div.home-box a div.title {
         font-size: 35px;
     }
     div.menu-button {
@@ -919,7 +907,7 @@ div.results a.result div.result-summary {
         fill: #fff;
         margin-top: 15px;
     }
-    div.home-content-element-2 div.home-box a div.title {
+    div.home-content div.home-content-element-2 div.home-box a div.title {
         font-size: 35px;
     }
     div.menu-button {
@@ -1022,7 +1010,7 @@ div.results a.result div.result-summary {
         width: 15.55px;
     }
     div.nav ul li {
-        margin-right: 7.5px;
+        margin-right: 12.5px;
     }
     div.nav ul li a span {
         font-size: 20px;
@@ -1030,7 +1018,7 @@ div.results a.result div.result-summary {
     div.home-container, div.home-content, div.home-content-element-1, div.home-content-element-2 {
         top: 116px;
     }
-    div.home-content-element-2 div.home-box a div.title {
+    div.home-content div.home-content-element-2 div.home-box a div.title {
         font-size: 40px;
     }
     div.b-grid {
@@ -1158,22 +1146,6 @@ a.essay-min:hover div.e-min-title {
 }
 a.essay-min div.e-min-text {
     font-size: 16px;
-}
-button.comments {
-    font-family: Jura;
-    font-weight: 700;
-    border: none;
-    font-size: 18px;
-    border-radius: 4px;
-    background-color: #B8B8B8;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-button.comments:hover, button.comments:focus {
-    background-color: #FACC2E;
 }
 ul {
     list-style: none;

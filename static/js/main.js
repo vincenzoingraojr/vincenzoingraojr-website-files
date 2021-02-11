@@ -172,7 +172,6 @@ function login() {
     var l_password = document.getElementById("l-password").value;
     firebase.auth().signInWithEmailAndPassword(l_email, l_password)
     .then((userCredential) => {
-        showUserComments();
         location.reload();
     })
     .catch(function(error) {

@@ -607,7 +607,7 @@ div.user-email {
     font-size: 16px;
     margin-bottom: 20px;
 }
-ul.comments, div.user-comments ul {
+ul.comments {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -617,13 +617,13 @@ ul.comments, div.user-comments ul {
 ul.comments {
     margin-top: 20px;
 }
-ul.comments li, div.user-comments ul li {
+ul.comments li {
     margin: 0;
     padding: 0;
     display: block;
     margin-bottom: 15px;
 }
-ul.comments>li:before, div.user-comments ul>li:before {
+ul.comments>li:before {
     display: none;
 }
 ul.comments li span.who-comments {
@@ -634,30 +634,18 @@ ul.comments li span.who-comments {
     color: black;
     margin-right: 10px;
 }
-div.user-comments ul li a {
-    margin-right: 10px;
-}
-ul.comments li span.comment-date, div.user-comments ul li span.comment-date {
+ul.comments li span.comment-date {
     display: inline-block;
     font-family: Jura;
     font-weight: 700;
     font-size: 16px;
     color: #FACC2E;
 }
-ul.comments li div.comment-text, div.user-comments ul li div.comment-text {
+ul.comments li div.comment-text {
     margin-top: 5px;
 }
-ul.comments li:last-child, div.user-comments ul li:last-child {
+ul.comments li:last-child {
     margin-bottom: 0;
-}
-div.user-comments {
-    margin-bottom: 20px;
-}
-div#account-comments, div#no-comments {
-    display: none;
-}
-div.title-work {
-    display: none;
 }
 button.reset-password-button {
     font-family: RobotoMono;

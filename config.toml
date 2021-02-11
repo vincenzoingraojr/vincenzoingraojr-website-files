@@ -19,7 +19,7 @@ disableAliases = true
 [params]
     author = "Vincenzo Ingrao Jr."
     tagline = "Il sito ufficiale"
-    twitter = "@vincenzoingraoj"
+    twitter = "@vincentingraojr"
     construction = ""
 
 [outputs]

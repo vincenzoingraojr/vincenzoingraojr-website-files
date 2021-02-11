@@ -18,41 +18,6 @@ $(document).ready(function(){
         x[slideIndex-1].classList.add("current");
         document.getElementById("count").innerHTML = "<div class=\"count-item\">" + slideIndex + "</div>" + "/" + x.length;
     }
-    function detectMouseWheelDirection(e){
-        var delta = null;
-        var direction = false;
-        if(!e) { // if the event is not provided, we get it from the window object
-            e = window.event;
-        }
-        if(e.wheelDelta) { // will work in most cases
-            delta = e.wheelDelta / 60;
-        } 
-        else if(e.detail) { // fallback for Firefox
-            delta = -e.detail / 2;
-        }
-        if(delta !== null) {
-            direction = delta > 0 ? 'up' : 'down';
-        }
-        return direction;
-    }
-    function handleMouseWheelDirection(direction){
-        console.log( direction ); // see the direction in the console
-        if(direction == 'down') {
-            showDivs(slideIndex += 1);
-        } 
-        else if(direction == 'up') {
-            showDivs(slideIndex += -1);
-        }
-    }
-    var home = document.getElementById("home-container");
-    home.onmousewheel = function(e) {
-        handleMouseWheelDirection(detectMouseWheelDirection(e));
-    };
-    if (window.addEventListener) {
-        home.addEventListener('DOMMouseScroll', function(e) {
-            handleMouseWheelDirection(detectMouseWheelDirection(e));
-        });
-    }
     $("#next").click(function(){
         showDivs(slideIndex += 1);
     });
